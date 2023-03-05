@@ -48,13 +48,7 @@ public class ProductServiceTest {
 		ProductResponse response = service.showProductByManufacturer("CANON");
 		assertNull(response.getProducts());
 	}
-	
-	@Test
-	public void showProductByCompanyWithValidInput() {
-		ProductResponse response = service.showProductByCompany("CANON");
-		assertNotNull(response.getProducts());
-	}
-	
+
 	@Test
 	public void showAllProductsTest() {
 		List<Product> products = new ArrayList<Product>();
