@@ -13,7 +13,7 @@
 	</parent>
 	
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 		<springfox-version>2.9.2</springfox-version>
 		<mockito.version>3.9.0</mockito.version>
 		<sonar.exclusions>
@@ -80,6 +80,8 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
+				<sonar.login>admin</sonar.login>
+				<sonar.password>admin123</sonar.password>
 				<sonar.host.url>http://localhost:9000</sonar.host.url>
 			</properties>
 		</profile>
