@@ -35,8 +35,9 @@ public class ProductRepository {
 	}
 	
 	public List<Product> showProductByCompany(String name) {
+		System.out.println("Name: "+name);
 		List<Product> products = null;
-		if (name == "HP") {
+		if (name.equalsIgnoreCase("HP")) {
 			products = new ArrayList<Product>();
 			Product product = new Product();
 			product.setId("H-PR1");

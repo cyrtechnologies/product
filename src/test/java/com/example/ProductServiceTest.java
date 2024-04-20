@@ -43,6 +43,13 @@ public class ProductServiceTest {
 	}
 	
 	@Test
+	public void addProductWithNullValue() {
+		ProductService service = new ProductService();
+		ProductResponse response = service.addProduct(null);
+		assertEquals("Product is null", response.getMessage());
+	}
+	
+	@Test
 	public void showProductByManufacturerWithNullValue() {
 		ProductService service = new ProductService();
 		ProductResponse response = service.showProductByManufacturer(null);

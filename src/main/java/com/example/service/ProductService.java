@@ -20,22 +20,23 @@ public class ProductService {
 	
 	public ProductResponse addProduct(Product product) {
 		productResponse = new ProductResponse();
-		int count = 0;
+		int count;
+		if (product == null) {
+			productResponse.setStatus("Failure");
+			productResponse.setMessage("Product is null");
+			return productResponse;
+		}
 		try {
 			count = productRepository.addProduct(product);
+			productResponse.setStatus("Success");
+			productResponse.setMessage("Product is added successfully");
 		} catch (Exception ex) {
 			count = 0;
 			System.out.println("Error connecting to DB");
-		}
-		System.out.println(count + " row(s) updated.");
-		if (count > 0) {
-			productResponse.setStatus("Success");
-			productResponse.setMessage("Product is added successfully");
-		} else {
 			productResponse.setStatus("Failure");
 			productResponse.setMessage("Product is not added successfully");
 		}
-		
+		System.out.println(count + " row(s) updated.");		
 		return productResponse;
 	}
 
