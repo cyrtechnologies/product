@@ -27,6 +27,27 @@ public class ProductServiceTest {
 	
 	@Mock
 	ProductRepository productRepository;
+	
+	@Test
+	public void addProduct() {
+		Product product = new Product();
+		product.setId("H-PR1");
+		product.setName("DESKJET - PRINTER");
+		product.setCompany("HP");
+
+		when(productRepository.addProduct(product)).thenReturn(1);
+
+		ProductResponse response = service.addProduct(product);
+		assertEquals("Success", response.getStatus());
+		assertEquals("Product is added successfully", response.getMessage());		
+	}
+	
+	@Test
+	public void showProductByManufacturerWithNullValue() {
+		ProductService service = new ProductService();
+		ProductResponse response = service.showProductByManufacturer(null);
+		assertEquals("Company cannot be empty", response.getMessage());
+	}
 
 	@Test
 	public void showProductByManufacturerWithEmptyValue() {

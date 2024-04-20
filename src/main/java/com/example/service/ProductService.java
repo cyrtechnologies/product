@@ -106,7 +106,7 @@ public class ProductService {
 	public ProductResponse showProductByManufacturer(String name) {
 		productResponse = new ProductResponse();
 		List<Product> products = null;
-		if (name == "") {
+		if (name == "" || name == null) {
 			productResponse.setStatus("Success");
 			productResponse.setMessage("Company cannot be empty");
 			return productResponse;
