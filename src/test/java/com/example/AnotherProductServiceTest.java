@@ -3,6 +3,7 @@ package com.example;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -16,7 +17,7 @@ public class AnotherProductServiceTest {
 	
 	AnotherProductService service;
 	
-	@Before
+	@BeforeClass
 	public void setUp() {
 		service = new AnotherProductService();
 	}
